@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Analysis Tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Image Analysis Tool</h1>
+            <p class="subtitle">Upload any image and get detailed analysis</p>
+        </header>
+
+        <div id="dropArea" class="drop-container">
+            <i class="fas fa-cloud-upload-alt drop-icon"></i>
+            <h2 class="drop-text">Drag & Drop Image Here</h2>
+            <p class="drop-hint">or click to browse files</p>
+            <input type="file" id="fileInput" accept="image/*" hidden>
+        </div>
+
+        <div id="previewContainer" class="preview-container">
+            <h2 class="preview-heading">Image Preview</h2>
+            <div class="image-preview-container">
+                <img id="imagePreview" class="image-preview" src="" alt="Image preview">
+            </div>
+            <div class="buttons-container">
+                <button id="analyzeBtn" class="btn btn-primary" disabled>Analyze Image</button>
+                <button id="resetBtn" class="btn btn-secondary">Reset</button>
+            </div>
+        </div>
+
+        <div id="resultsContainer" class="results-container">
+            <div id="loadingIndicator" class="loading-indicator">
+                <div class="spinner"></div>
+                <p>Analyzing image, please wait...</p>
+            </div>
+            
+            <div id="results" class="results">
+                <div class="result-section">
+                    <h3 class="result-heading">Description</h3>
+                    <p id="description" class="description-text"></p>
+                    <div class="category-wrapper">
+                        <span>Category: </span>
+                        <span id="category" class="category-badge"></span>
+                    </div>
+                </div>
+                
+                <div class="result-section">
+                    <h3 class="result-heading">Color Palette</h3>
+                    <div id="colorPalette" class="color-palette"></div>
+                </div>
+                
+                <div class="result-section">
+                    <h3 class="result-heading">Emotional Tone</h3>
+                    <div id="sentiment" class="sentiment-display"></div>
+                </div>
+                
+                <div class="result-section">
+                    <h3 class="result-heading">Patterns</h3>
+                    <ul id="patternsList" class="patterns-list"></ul>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2025 Image Analysis Tool</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
